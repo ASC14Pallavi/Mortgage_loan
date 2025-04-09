@@ -1,0 +1,57 @@
+.rate-selection-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    margin: 20px auto;
+    max-width: 700px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  
+  .table thead {
+    background-color: #a29bfe; /* Soft Lavender */
+    color: #fff;
+  }
+  
+  .table th,
+  .table td {
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f9ff;
+  }
+  
+  .btn.btn-primary {
+    padding: 6px 16px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn.btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

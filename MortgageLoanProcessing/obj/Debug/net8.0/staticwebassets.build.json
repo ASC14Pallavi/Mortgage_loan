@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ToozKFQSSLXZthe0reGXNiJVWFQVUq60XTZNIALAOoc=",
+  "Source": "MortgageLoanProcessing",
+  "BasePath": "_content/MortgageLoanProcessing",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

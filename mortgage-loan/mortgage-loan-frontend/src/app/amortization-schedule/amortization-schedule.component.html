@@ -1,0 +1,69 @@
+<div class="container">
+  <h2>📊 Amortization Schedule</h2>
+
+  <!-- Loan Info Card -->
+  <div class="loan-info-card">
+    <label for="loanSelect">Select Loan:</label>
+    <select id="loanSelect" [(ngModel)]="selectedLoanId" (change)="fetchAmortizationSchedule()">
+      <option *ngFor="let loan of userLoans" [value]="loan.id">
+        Loan ID: {{ loan.id }} - ${{ loan.loanAmount }} at {{ loan.interestRate }}%
+      </option>
+    </select>
+  </div>
+
+  <!-- Message when no schedule exists -->
+  <div *ngIf="!scheduleExists" class="no-schedule">
+    <p>⚠️ No amortization schedule found for this loan.</p>
+    <button (click)="generateAmortizationSchedule()">Generate Schedule</button>
+  </div>
+
+  <!-- Schedule Section -->
+  <div *ngIf="scheduleExists" class="schedule-section">
+    <h3>Loan ID: {{ selectedLoanId }}</h3>
+
+  <!-- Modern Bootstrap Spinner -->
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center mt-4">
+  <div class="spinner-border text-success spinner-lg" role="status" style="width: 4rem; height: 4rem;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+
+    <!-- Table Section -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>📅 Date</th>
+            <th>💰 Principal</th>
+            <th>💸 Interest</th>
+            <th>🏦 Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of amortizationSchedule">
+            <td>{{ payment.paymentNumber }}</td>
+            <td>{{ payment.paymentDate | date:'yyyy-MM-dd' }}</td>
+            <td>${{ payment.principalPayment | number:'1.2-2' }}</td>
+            <td>${{ payment.interestPayment | number:'1.2-2' }}</td>
+            <td>${{ payment.remainingBalance | number:'1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="pageNumber === 1">⬅ Prev</button>
+      <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="pageNumber === totalPages">Next ➡</button>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="chart-section">
+      <h4>📈 Principal vs Interest Over Time</h4>
+      <canvas id="amortizationChart"></canvas>
+    </div>
+  </div>
+</div>

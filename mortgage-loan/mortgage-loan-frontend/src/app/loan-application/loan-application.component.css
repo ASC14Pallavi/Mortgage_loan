@@ -1,0 +1,30 @@
+.loan-form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .loan-form-container h2 {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  input.form-control:focus {
+    border-color: #a29bfe;
+    box-shadow: 0 0 0 0.2rem rgba(162, 155, 254, 0.25);
+  }
+  
+  button {
+    min-width: 160px;
+  }
+  

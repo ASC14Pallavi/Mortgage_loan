@@ -1,0 +1,21 @@
+<div class="rate-selection-container">
+  <h2>Select an Interest Rate</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Rate (%)</th>
+        <th>Valid From</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rate of interestRates">
+        <td>{{ rate.rate }}</td>
+        <td>{{ rate.validFrom | date:'yyyy-MM-dd' }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="selectRate(rate.rate, rate.id)">Select</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
